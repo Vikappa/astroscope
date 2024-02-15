@@ -5,15 +5,14 @@ import { Result } from '../uility/interfacesFetchData'
 function ArticlePreview() {
     const [articleId, setArticleId] = useState('');
     const location = useLocation();
-    const [article, setArticle] = useState<Result | null>(null); // Imposta il valore iniziale su null
+    const [article, setArticle] = useState<Result | null>(null)
 
     useEffect(() => {
         const pathId = location.pathname.substring(1);
         setArticleId(pathId);
-    }, [location.pathname]); // Aggiungi location.pathname alle dipendenze
+    }, [location.pathname])
 
     useEffect(() => {
-        // Definisci la funzione all'interno dell'effetto se la sua logica dipende da `articleId`
         const fetchArticle = async () => {
             const url = `https://api.spaceflightnewsapi.net/v4/articles/${articleId}`
             try {

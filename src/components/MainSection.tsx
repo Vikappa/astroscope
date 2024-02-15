@@ -7,7 +7,7 @@ function MainSection() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('https://api.spaceflightnewsapi.net/v4/articles/');
+            const response = await fetch('https://api.spaceflightnewsapi.net/v4/articles/')
             if (response.ok) {
                 const data = await response.json();
                 const articles: Welcome = {
@@ -33,10 +33,10 @@ function MainSection() {
                  setData(articles)
 
             } else {
-                throw new Error('Errore fetch');
+                throw new Error('Errore fetch')
             }
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
     };
 
