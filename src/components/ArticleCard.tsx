@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Result } from '../uility/interfacesFetchData';
+import { Link } from 'react-router-dom';
 
 interface ArticleCardProps {
     article: Result;
@@ -15,7 +16,9 @@ function ArticleCard({ article }: ArticleCardProps) { // Destrutturazione delle 
         <Card.Text className='riassuntoArticolo'>
           {article.summary} 
         </Card.Text>
-        <Button variant="primary" href={article.url}>Read More</Button>
+        <Link to={`/${article.id}`}>
+        <Button variant="primary">Read More</Button>
+        </Link>
       </Card.Body>
     </Card>
   );
