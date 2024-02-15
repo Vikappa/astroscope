@@ -3,10 +3,8 @@ import { Welcome, Result, Launch } from "../uility/interfacesFetchData"
 import ArticleCard from "./ArticleCard"
 
 function MainSection() {
-    // Assuming Welcome includes an array of Result, update the state to hold an array of Result
     const [currentFetchData, setData] = useState<Welcome>()
 
-    // This function now correctly handles fetching an array of articles
     const fetchData = async () => {
         try {
             const response = await fetch('https://api.spaceflightnewsapi.net/v4/articles/');
@@ -35,7 +33,7 @@ function MainSection() {
                  setData(articles)
 
             } else {
-                throw new Error('Error fetching data');
+                throw new Error('Errore fetch');
             }
         } catch (error) {
             console.error(error);
